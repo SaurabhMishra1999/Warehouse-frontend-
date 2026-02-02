@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Saipooja Warehouse</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Saipooja Warehouse</div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">My Bookings</a></li>
+                <li><a href="#">Stock</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome, <span id="client-name">Client</span>!</h1>
+            <p>Here is an overview of your warehouse activities.</p>
+        </section>
+
+        <section class="dashboard-content">
+            <h2>My Recent Bookings</h2>
+            <table id="client-bookings-table">
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>City</th>
+                        <th>Product</th>
+                        <th>Space (Sq. Ft.)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Client's bookings will be inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
