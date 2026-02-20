@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Dashboard - Saipooja Warehouse & Logistics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -134,5 +135,53 @@
     <script src="script.js"></script> <!-- For header and general UI -->
     <script src="dashboard.js"></script>
 
+=======
+    <title>Client Dashboard - Saipooja Warehouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Saipooja Warehouse</div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="stock.html">My Stock</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Client Dashboard</h1>
+
+        <section id="payment-info">
+            <h2>Payment Information</h2>
+            <div class="payment-details">
+                <p>Pending Amount: <span id="pending-payment-amount"></span></p>
+                <p>Remaining Stock Value: <span id="remaining-stock-value"></span></p>
+            </div>
+        </section>
+
+        <section id="damage-reports">
+            <h2>Damage Reports</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report ID</th>
+                        <th>Vehicle No</th>
+                        <th>Date of Report</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="damage-reports-body">
+                    <!-- Data will be loaded from dashboard.js -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
 </body>
 </html>

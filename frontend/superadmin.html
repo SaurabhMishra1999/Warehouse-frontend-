@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Super Admin Dashboard - Saipooja Warehouse</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="admin.css">
@@ -20,10 +21,24 @@
         <nav>
             <ul>
                 <li><a href="/logout">Logout</a></li>
+=======
+    <title>Superadmin Dashboard - Saipooja Warehouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Saipooja Warehouse</div>
+        <nav>
+            <ul>
+                <li><a href="superadmin.html">Dashboard</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="login.html">Logout</a></li>
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
             </ul>
         </nav>
     </header>
 
+<<<<<<< HEAD
     <main class="container" style="padding: 2rem;">
         <h1>Live Shipment Tracking</h1>
 
@@ -46,11 +61,31 @@
                 </thead>
                 <tbody>
                     <!-- Transport data will be loaded here -->
+=======
+    <main class="container">
+        <h1>Superadmin Dashboard</h1>
+
+        <section id="warehouse-status">
+            <h2>Live Warehouse Status</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Booking ID</th>
+                        <th>User ID</th>
+                        <th>City</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="warehouse-table-body">
+                    <!-- Data will be loaded from superadmin.js -->
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
                 </tbody>
             </table>
         </section>
     </main>
 
+<<<<<<< HEAD
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
@@ -70,6 +105,8 @@
       firebase.initializeApp(firebaseConfig);
     </script>
 
+=======
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
     <script src="superadmin.js"></script>
 </body>
 </html>

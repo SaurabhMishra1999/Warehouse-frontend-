@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const auth = firebase.auth();
     const db = firebase.firestore();
@@ -74,4 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+=======
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('/api/bookings')
+        .then(response => response.json())
+        .then(bookingData => {
+            const tableBody = document.getElementById('warehouse-table-body');
+            tableBody.innerHTML = ''; // Clear static data
+            bookingData.forEach(booking => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${booking.bookingId}</td>
+                    <td>${booking.userId}</td>
+                    <td>${booking.city}</td>
+                    <td>${booking.status}</td>
+                    <td><button>Details</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error fetching booking data:', error));
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
 });

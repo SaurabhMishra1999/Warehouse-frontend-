@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Admin Dashboard Specific Styles */
 
 .status-pending {
@@ -36,4 +37,38 @@
     background-color: #f9f9f9;
     padding: 2rem;
     border-radius: 8px;
+=======
+#management-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.section {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+}
+
+#booking-requests {
+    margin-top: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+tr, td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+>>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
 }
