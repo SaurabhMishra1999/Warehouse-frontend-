@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   # Install nodejs and firebase-tools
-  packages = [pkgs.nodejs_20 pkgs.firebase-tools];
+  packages = [pkgs.nodejs_20 pkgs.firebase-tools pkgs.rsync];
 
   # Configure the web preview and workspace hooks
   idx = {
