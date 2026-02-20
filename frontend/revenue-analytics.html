@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenue Analytics - Super Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Super Admin</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="super-admin-dashboard.html"><i class="fas fa-globe-americas"></i> All India Overview</a></li>
+                    <li><a href="branch-management.html"><i class="fas fa-sitemap"></i> Branch Management</a></li>
+                    <li><a href="user-management.html"><i class="fas fa-users-cog"></i> User Management</a></li>
+                    <li class="active"><a href="revenue-analytics.html"><i class="fas fa-chart-pie"></i> Revenue Analytics</a></li>
+                    <li><a href="system-settings.html"><i class="fas fa-cogs"></i> System Settings</a></li>
+                    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Revenue Analytics</h1>
+            </header>
+
+            <section class="dashboard-section">
+                <h2>Analytics Overview</h2>
+                <p>This section is under construction. Future updates will include detailed revenue charts, branch-wise profit analysis, and custom date range reporting.</p>
+                 <div style="text-align: center; padding: 50px; color: #777;">
+                    <i class="fas fa-chart-pie fa-4x"></i>
+                    <p style="margin-top: 20px; font-size: 1.2em;">Coming Soon</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK & Auth Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
+      };
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    <script src="dashboard-auth.js"></script>
+</body>
+</html>

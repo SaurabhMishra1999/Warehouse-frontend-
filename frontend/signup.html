@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Saipooja Warehouse & Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: var(--light-bg);
+        }
+        .signup-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0 60px 0;
+        }
+        .signup-form-container {
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .signup-form-container h2 {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+         .notification {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: none; /* Initially hidden */
+        }
+        .notification.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .notification.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-warehouse"></i> Saipooja
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                 <a href="#" id="login-modal-btn" class="btn btn-primary">Login</a>
+            </div>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="signup-section">
+            <div class="signup-form-container">
+                <h2>Create Your Account</h2>
+                <div id="notification" class="notification"></div>
+                <form id="signup-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="company-name">Company Name:</label>
+                        <input type="text" id="company-name" name="company-name" placeholder="Enter your company's name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" placeholder="e.g., name@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Create Password:</label>
+                        <input type="password" id="password" name="password" placeholder="Choose a strong password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your 10-digit mobile number" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+                <p style="text-align: center; margin-top: 1.5rem;">
+                    Already have an account? <a href="#" id="login-link">Login here</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal (re-used from index.html) -->
+    <div id="login-modal" class="modal">
+         <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Login</h2>
+            <div class="login-tabs">
+                <button class="tab-link active" onclick="openLoginTab(event, 'user')">User</button>
+                <button class="tab-link" onclick="openLoginTab(event, 'admin')">Admin</button>
+                <button class="tab-link" onclick="openLoginTab(event, 'superadmin')">Super Admin</button>
+            </div>
+
+            <div id="user" class="tab-content" style="display:block;">
+                <form id="user-login-form">
+                    <div class="form-group">
+                        <label for="user-username">Email:</label>
+                        <input type="email" id="user-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-password">Password:</label>
+                        <input type="password" id="user-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+            </div>
+
+            <div id="admin" class="tab-content">
+                <form id="admin-login-form">
+                     <div class="form-group">
+                        <label for="admin-username">Email:</label>
+                        <input type="email" id="admin-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-password">Password:</label>
+                        <input type="password" id="admin-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+            </div>
+
+            <div id="superadmin" class="tab-content">
+                <form id="superadmin-login-form">
+                    <div class="form-group">
+                        <label for="superadmin-username">Email:</label>
+                        <input type="email" id="superadmin-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="superadmin-password">Password:</label>
+                        <input type="password" id="superadmin-password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
+      };
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Specific script for the signup page to handle the login link
+        document.getElementById('login-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-modal').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

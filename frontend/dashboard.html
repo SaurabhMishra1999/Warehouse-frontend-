@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Saipooja Warehouse & Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header id="main-header" class="scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-warehouse"></i> Saipooja
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="history.html">Full History</a></li>
+                    <li class="active"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-section">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1>Welcome, <span id="company-name">User</span>!</h1>
+                    <p>Manage your bookings and services from here.</p>
+                </div>
+
+                <!-- Dashboard Tabs -->
+                <div class="dashboard-tabs">
+                    <button class="tab-link active" data-tab="tab-bookings">Recent Bookings</button>
+                    <button class="tab-link" data-tab="tab-new-booking">Create New Booking</button>
+                    <button class="tab-link" data-tab="tab-branches">Manage Branches</button>
+                </div>
+
+                <!-- Tab Content: Recent Bookings -->
+                <div id="tab-bookings" class="tab-content active">
+                    <div class="dashboard-section">
+                        <h2>Recent Warehouse & Cold Storage</h2>
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>City</th>
+                                        <th>Product</th>
+                                        <th>Space (Sq. Ft.)</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-warehouse-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="dashboard-section">
+                        <h2>Recent Logistics</h2>
+                        <div class="table-responsive">
+                             <table>
+                                <thead>
+                                    <tr>
+                                        <th>Pickup</th>
+                                        <th>Dropoff</th>
+                                        <th>Vehicle</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-logistics-body"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: New Booking -->
+                <div id="tab-new-booking" class="tab-content">
+                    <div id="booking-form-container"></div> <!-- Booking form from index.html will be loaded here -->
+                </div>
+
+                <!-- Tab Content: Manage Branches -->
+                <div id="tab-branches" class="tab-content">
+                    <div class="dashboard-section">
+                        <h2>Add New Branch</h2>
+                        <form id="add-branch-form" class="booking-form" style="max-width: 600px;">
+                            <div class="form-group">
+                                <label for="branch-name-input">Branch Name</label>
+                                <input type="text" id="branch-name-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="branch-location-input">Location</label>
+                                <input type="text" id="branch-location-input" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Add Branch</button>
+                        </form>
+                    </div>
+                    <div class="dashboard-section">
+                        <h2>Your Branches</h2>
+                        <div id="branches-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
+      };
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+    
+    <script src="script.js"></script> <!-- For header and general UI -->
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

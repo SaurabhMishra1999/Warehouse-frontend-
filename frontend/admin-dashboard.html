@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Saipooja Warehouse</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Saipooja Warehouse</h3>
+                <span>Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Manage Clients</a></li>
+                    <li><a href="#"><i class="fas fa-warehouse"></i> Manage Warehouses</a></li>
+                    <li><a href="#"><i class="fas fa-truck"></i> Manage Logistics</a></li>
+                    <li><a href="#"><i class="fas fa-file-invoice"></i> View All Bookings</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> Settings</a></li>
+                    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h1>Branch Dashboard</h1>
+                <div class="header-actions">
+                    <a href="#" class="btn">Add New Client</a>
+                </div>
+            </header>
+
+            <section class="dashboard-overview">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <div class="card-info">
+                        <h4>Total Clients</h4>
+                        <p>75</p>
+                        <span>+5 this month</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="card-info">
+                        <h4>Total Revenue</h4>
+                        <p>₹12,50,000</p>
+                        <span>This month</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="card-info">
+                        <h4>Pending Approvals</h4>
+                        <p>3 Bookings</p>
+                        <span>Awaiting action</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Recently Added Clients</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client ID</th>
+                            <th>Company Name</th>
+                            <th>Joined Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CL-075</td>
+                            <td>Global Exports Pvt. Ltd.</td>
+                            <td>28 Oct 2024</td>
+                            <td><span class="status active">Active</span></td>
+                            <td><a href="#" class="btn-small">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>CL-074</td>
+                            <td>Surya Foods</td>
+                            <td>25 Oct 2024</td>
+                            <td><span class="status active">Active</span></td>
+                            <td><a href="#" class="btn-small">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>CL-073</td>
+                            <td>Rohan Textiles</td>
+                            <td>22 Oct 2024</td>
+                            <td><span class="status inactive">Inactive</span></td>
+                            <td><a href="#" class="btn-small">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="dashboard-auth.js"></script>
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

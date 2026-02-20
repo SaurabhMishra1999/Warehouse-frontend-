@@ -1,0 +1,39 @@
+
+/* Invoices Page Specific Styles */
+
+#invoices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+#invoices-table th,
+#invoices-table td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#invoices-table th {
+    background-color: #f2f2f2;
+}
+
+.status-paid {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.status-unpaid {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.btn-pay {
+    background-color: #3498db;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}

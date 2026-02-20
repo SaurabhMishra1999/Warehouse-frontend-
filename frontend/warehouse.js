@@ -1,0 +1,1 @@
+console.log('warehouse.js loaded');

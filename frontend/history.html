@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History - Saipooja Warehouse & Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css"> <!-- Reusing dashboard styles for tables -->
+    <style>
+        body {
+            background-color: var(--light-bg);
+        }
+        .history-section {
+            padding-top: 120px; /* Adjust for fixed header */
+            padding-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header" class="scrolled">
+         <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-warehouse"></i> Saipooja
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li class="active"><a href="history.html">History</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="history-section">
+            <div class="container">
+                <div class="dashboard-header">
+                    <h1>Your Booking History</h1>
+                </div>
+
+                <div class="dashboard-section" style="margin-top: 2rem;">
+                    <h2>Warehouse & Cold Storage Bookings</h2>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Service Type</th>
+                                    <th>City</th>
+                                    <th>Product</th>
+                                    <th>Space (Sq. Ft.)</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="warehouse-history-body">
+                                <!-- Data will be loaded by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-section" style="margin-top: 2rem;">
+                    <h2>Logistics Bookings</h2>
+                    <div class="table-responsive">
+                         <table>
+                            <thead>
+                                <tr>
+                                    <th>Pickup</th>
+                                    <th>Dropoff</th>
+                                    <th>Vehicle</th>
+                                    <th>Goods</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="logistics-history-body">
+                                <!-- Data will be loaded by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script> <!-- For header functionality -->
+    <script src="history.js"></script>
+
+</body>
+</html>
