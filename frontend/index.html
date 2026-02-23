@@ -1,308 +1,646 @@
-<<<<<<< HEAD
-<!-- index.html -->
-=======
->>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Saipooja Warehouse & Logistics</title>
+    <title>Saipooja Warehouse & Logistics | Advanced SAAS Platform</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Auto-sliding Logo Animation */
+        .logo-slider-container {
+            overflow: hidden;
+            padding: 20px 0;
+            background: linear-gradient(90deg, #ffffff 0%, #f8f9fa 50%, #ffffff 100%);
+        }
+        .logo-slider-track {
+            display: flex;
+            gap: 60px;
+            animation: slideLogos 25s linear infinite;
+            width: max-content;
+        }
+        .logo-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 150px;
+            height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .logo-slide:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .logo-slide img {
+            max-height: 50px;
+            max-width: 150px;
+            object-fit: contain;
+        }
+        @keyframes slideLogos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* Video Background Styles */
+        .hero-video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .hero-video-bg #player {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 79, 154, 0.85) 0%, rgba(7, 61, 115, 0.75) 100%);
+            z-index: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
     <header id="main-header">
         <div class="container">
-            <a href="index.html" class="logo"><i class="fas fa-warehouse"></i> Saipooja</a>
+            <a href="index.html" class="logo">
+                <i class="fas fa-warehouse"></i> Saipooja
+                <span class="logo-tagline">Warehouse & Logistics</span>
+            </a>
             <nav class="main-nav">
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="history.html">History</a></li>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                    <li><a href="#facilities"><i class="fas fa-building"></i> Facilities</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Dashboard</a>
+                        <a href="#" class="dropbtn"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                         <div class="dropdown-content">
-                            <a href="admin-dashboard.html">Admin Dashboard</a>
-                            <a href="client-dashboard.html">Client Dashboard</a>
-                            <a href="dashboard.html">Dashboard</a>
-                            <a href="super-admin-dashboard.html">Super Admin Dashboard</a>
+                            <a href="admin-dashboard.html"><i class="fas fa-user-shield"></i> Admin Dashboard</a>
+                            <a href="client-dashboard.html"><i class="fas fa-user"></i> Client Dashboard</a>
+                            <a href="super-admin-dashboard.html"><i class="fas fa-crown"></i> Super Admin</a>
                         </div>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Pages</a>
+                        <a href="#" class="dropbtn"><i class="fas fa-file-alt"></i> Pages</a>
                         <div class="dropdown-content">
-                            <a href="invoices.html">Invoices</a>
-                            <a href="payments.html">Payments</a>
-                            <a href="plans.html">Plans</a>
-                            <a href="subscriptions.html">Subscriptions</a>
-                            <a href="user-management.html">User Management</a>
-                            <a href="branch-management.html">Branch Management</a>
-                            <a href="system-settings.html">System Settings</a>
-                            <a href="revenue-analytics.html">Revenue Analytics</a>
-                            <a href="settings.html">Settings</a>
+                            <a href="invoices.html"><i class="fas fa-file-invoice-dollar"></i> Invoices</a>
+                            <a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a>
+                            <a href="plans.html"><i class="fas fa-tags"></i> Plans</a>
+                            <a href="subscriptions.html"><i class="fas fa-sync"></i> Subscriptions</a>
+                            <a href="user-management.html"><i class="fas fa-users-cog"></i> User Management</a>
+                            <a href="branch-management.html"><i class="fas fa-sitemap"></i> Branch Management</a>
+                            <a href="revenue-analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a>
+                            <a href="settings.html"><i class="fas fa-sliders-h"></i> Settings</a>
                         </div>
                     </li>
-                    <li><a href="policies.html">Policies</a></li>
-                    <li><a href="terms.html">Terms</a></li>
-                    <li><a href="privacy.html">Privacy</a></li>
-
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
-                 <a href="signup.html" class="btn btn-secondary">Sign Up</a>
-                 <a href="login.html" class="btn btn-primary">Login</a>
+                <a href="signup.html" class="btn btn-secondary"><i class="fas fa-user-plus"></i> Sign Up</a>
+                <a href="login.html" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
             </div>
             <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
-=======
-    <title>Saipooja Warehouse</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="logo">Saipooja Warehouse</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="coldstorage.html">Cold Storage</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="auth-buttons">
-            <a href="login.html" class="button">Login</a>
->>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
         </div>
     </header>
 
     <main>
+        <!-- Hero Section with Video Background -->
         <section class="hero">
-<<<<<<< HEAD
-            <div class="hero-video-bg"><div id="player"></div></div>
-            <div class="hero-content"><h1><span id="typing-effect"></span></h1></div>
+            <div class="hero-video-bg">
+                <div id="player"></div>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-award"></i> India's Trusted Warehouse Partner</div>
+                <h1><span id="typing-effect"></span></h1>
+                <p class="hero-subtitle">End-to-end warehousing, logistics, and cold storage solutions powered by cutting-edge technology</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary btn-large"><i class="fas fa-quote-right"></i> Get Quote</a>
+                    <a href="about.html" class="btn btn-outline btn-large"><i class="fas fa-play-circle"></i> Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1M+</span>
+                        <span class="stat-label">Sq. Ft. Space</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#facilities"><i class="fas fa-chevron-down"></i></a>
+            </div>
         </section>
 
+        <!-- Facilities Section -->
         <section id="facilities" class="facilities-section">
             <div class="container">
-                <div class="section-header"><h2>Our Comprehensive Facilities</h2></div>
+                <div class="section-header">
+                    <span class="section-subtitle">Our Infrastructure</span>
+                    <h2>Our Comprehensive Facilities</h2>
+                    <p>State-of-the-art infrastructure with advanced technology for all your storage needs</p>
+                </div>
                 <div class="facilities-grid">
-                    <div class="facility-card"><i class="fas fa-file-invoice-dollar"></i><h3>Digital Invoicing</h3></div>
-                    <div class="facility-card"><i class="fas fa-cctv"></i><h3>Live Stack Monitoring</h3></div>
-                    <div class="facility-card"><i class="fas fa-shield-alt"></i><h3>Best-in-Class Security</h3></div>
-                    <div class="facility-card"><i class="fas fa-desktop"></i><h3>Online Client Portal</h3></div>
-                    <div class="facility-card"><i class="fas fa-warehouse"></i><h3>Scalable Spaces</h3></div>
-                    <div class="facility-card"><i class="fas fa-headset"></i><h3>Dedicated Support</h3></div>
-                    <div class="facility-card"><i class="fas fa-truck-arrow-right"></i><h3>Real-Time GPS Tracking</h3></div>
-                    <div class="facility-card"><i class="fas fa-temperature-full"></i><h3>Climate Control</h3></div>
-                    <div class="facility-card"><i class="fas fa-chart-pie"></i><h3>Automated Reporting</h3></div>
-                    <div class="facility-card"><i class="fas fa-boxes-packing"></i><h3>Inventory Management</h3></div>
-                    <div class="facility-card"><i class="fas fa-clipboard-check"></i><h3>Quality Control</h3></div>
-                    <div class="facility-card"><i class="fas fa-right-left"></i><h3>Cross-Docking</h3></div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="facility-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                        <h3>Digital Invoicing</h3>
+                        <p>Automated billing and invoice management system</p>
+                        <span class="facility-tag">SAAS Feature</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="facility-icon"><i class="fas fa-video"></i></div>
+                        <h3>Live Stack Monitoring</h3>
+                        <p>24/7 CCTV surveillance and real-time monitoring</p>
+                        <span class="facility-tag">Security</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="facility-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Best-in-Class Security</h3>
+                        <p>Biometric access and advanced security systems</p>
+                        <span class="facility-tag">Safety</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="facility-icon"><i class="fas fa-desktop"></i></div>
+                        <h3>Online Client Portal</h3>
+                        <p>Real-time dashboard for inventory and operations</p>
+                        <span class="facility-tag">SAAS Feature</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="facility-icon"><i class="fas fa-ruler-combined"></i></div>
+                        <h3>Scalable Spaces</h3>
+                        <p>Flexible storage solutions from small to enterprise</p>
+                        <span class="facility-tag">Flexible</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="facility-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Dedicated Support</h3>
+                        <p>24/7 customer support and account managers</p>
+                        <span class="facility-tag">Support</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="700">
+                        <div class="facility-icon"><i class="fas fa-route"></i></div>
+                        <h3>Real-Time GPS Tracking</h3>
+                        <p>Live shipment tracking with advanced logistics</p>
+                        <span class="facility-tag">Logistics</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="800">
+                        <div class="facility-icon"><i class="fas fa-thermometer-half"></i></div>
+                        <h3>Climate Control</h3>
+                        <p>Temperature-controlled environments for sensitive goods</p>
+                        <span class="facility-tag">Cold Storage</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="900">
+                        <div class="facility-icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Automated Reporting</h3>
+                        <p>AI-powered analytics and business intelligence</p>
+                        <span class="facility-tag">SAAS Feature</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="1000">
+                        <div class="facility-icon"><i class="fas fa-boxes"></i></div>
+                        <h3>Inventory Management</h3>
+                        <p>Smart inventory tracking with barcode/QR systems</p>
+                        <span class="facility-tag">SAAS Feature</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="1100">
+                        <div class="facility-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h3>Quality Control</h3>
+                        <p>Regular inspections and quality assurance protocols</p>
+                        <span class="facility-tag">Quality</span>
+                    </div>
+                    <div class="facility-card" data-aos="fade-up" data-aos-delay="1200">
+                        <div class="facility-icon"><i class="fas fa-dolly"></i></div>
+                        <h3>Cross-Docking</h3>
+                        <p>Efficient transfer of goods with minimal storage</p>
+                        <span class="facility-tag">Logistics</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="services-section">
             <div class="container">
-                <!-- Warehouse Form -->
-                <div class="service-form-wrapper">
-                    <div class="service-icon"><i class="fas fa-boxes-stacked"></i></div>
-                    <h3>Warehouse Quotation</h3>
-                    <form class="service-form">
-                        <div class="form-grid">
-                            <input type="text" placeholder="Name" required class="grid-col-span-2">
-                            <input type="email" placeholder="Email" required>
-                            <input type="tel" placeholder="Phone Number" required>
-                            <select required class="grid-col-span-2"><option disabled selected>Select City</option><option>Mumbai</option><option>Pune</option><option>Delhi</option></select>
-                            <input type="number" placeholder="Space (Sq. Ft.)" required>
-                            <select required><option disabled selected>Rental Duration</option><option>1-3 Months</option><option>6 Months</option><option>1 Year+</option></select>
-                            <textarea placeholder="Product details and any special requirements..." rows="4" class="grid-col-span-2"></textarea>
-                        </div>
-                        <button type="submit" class="btn-quotation">Request Quotation</button>
-                    </form>
+                <div class="section-header">
+                    <span class="section-subtitle">Our Services</span>
+                    <h2>Tailored Solutions for Your Business</h2>
+                    <p>Choose from our comprehensive range of warehousing and logistics services</p>
                 </div>
-
-                <!-- Logistics Form -->
-                <div class="service-form-wrapper">
-                    <div class="service-icon"><i class="fas fa-truck"></i></div>
-                    <h3>Logistics Quotation</h3>
-                    <form class="service-form">
-                        <div class="form-grid">
-                            <input type="text" placeholder="Name" required class="grid-col-span-2">
-                            <input type="email" placeholder="Email" required>
-                            <input type="tel" placeholder="Phone Number" required>
-                            <input type="text" placeholder="Origin" required>
-                            <input type="text" placeholder="Destination" required>
-                            <input type="text" placeholder="Shipment Type (e.g., FTL, LTL)" required>
-                            <input type="number" placeholder="Weight (in kg)" required>
-                            <textarea placeholder="Cargo details and any special handling instructions..." rows="4" class="grid-col-span-2"></textarea>
+                
+                <div class="services-grid">
+                    <!-- Warehouse Form -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+                            <h3>Warehouse Storage</h3>
+                            <p>Secure and scalable storage solutions</p>
                         </div>
-                        <button type="submit" class="btn-quotation">Request Quotation</button>
-                    </form>
-                </div>
+                        <form class="service-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number *" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Select City *</option>
+                                        <option>Mumbai</option>
+                                        <option>Pune</option>
+                                        <option>Delhi</option>
+                                        <option>Bangalore</option>
+                                        <option>Chennai</option>
+                                        <option>Hyderabad</option>
+                                        <option>Kolkata</option>
+                                        <option>Ahmedabad</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="Space Required (Sq. Ft.) *" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Duration</option>
+                                        <option>1-3 Months</option>
+                                        <option>3-6 Months</option>
+                                        <option>6-12 Months</option>
+                                        <option>1 Year+</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <textarea placeholder="Product details and any special requirements..." rows="3"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-quotation"><i class="fas fa-paper-plane"></i> Request Quote</button>
+                        </form>
+                    </div>
 
-                <!-- Cold Storage Form -->
-                <div class="service-form-wrapper">
-                    <div class="service-icon"><i class="fas fa-snowflake"></i></div>
-                    <h3>Cold Storage Quotation</h3>
-                    <form class="service-form">
-                        <div class="form-grid">
-                            <input type="text" placeholder="Name" required class="grid-col-span-2">
-                            <input type="email" placeholder="Email" required>
-                            <input type="tel" placeholder="Phone Number" required>
-                            <select required class="grid-col-span-2"><option disabled selected>Select City</option><option>Mumbai</option><option>Pune</option><option>Delhi</option></select>
-                            <input type="number" placeholder="Pallets/Units" required>
-                            <select required><option disabled selected>Temperature Range</option><option>Frozen (-18 to -25°C)</option><option>Chilled (0 to 5°C)</option><option>Ambient (15 to 25°C)</option></select>
-                            <textarea placeholder="Product details and any specific storage requirements..." rows="4" class="grid-col-span-2"></textarea>
+                    <!-- Logistics Form -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon"><i class="fas fa-truck"></i></div>
+                            <h3>Logistics Services</h3>
+                            <p>End-to-end transportation solutions</p>
                         </div>
-                        <button type="submit" class="btn-quotation">Request Quotation</button>
-                    </form>
+                        <form class="service-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Origin City *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Destination City *" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Shipment Type</option>
+                                        <option>FTL (Full Truck Load)</option>
+                                        <option>LTL (Less than Truck Load)</option>
+                                        <option>Express Delivery</option>
+                                        <option>International</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="Weight (kg) *" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <textarea placeholder="Cargo details and special handling instructions..." rows="3"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-quotation"><i class="fas fa-paper-plane"></i> Request Quote</button>
+                        </form>
+                    </div>
+
+                    <!-- Cold Storage Form -->
+                    <div class="service-card">
+                        <div class="service-header">
+                            <div class="service-icon"><i class="fas fa-snowflake"></i></div>
+                            <h3>Cold Storage</h3>
+                            <p>Temperature-controlled storage solutions</p>
+                        </div>
+                        <form class="service-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Full Name *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address *" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Phone Number *" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Select City *</option>
+                                        <option>Mumbai</option>
+                                        <option>Pune</option>
+                                        <option>Delhi</option>
+                                        <option>Bangalore</option>
+                                        <option>Chennai</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" placeholder="Pallets/Units *" required>
+                                </div>
+                                <div class="form-group">
+                                    <select required>
+                                        <option value="" disabled selected>Temperature Range</option>
+                                        <option>Frozen (-18°C to -25°C)</option>
+                                        <option>Chilled (0°C to 5°C)</option>
+                                        <option>Ambient (15°C to 25°C)</option>
+                                        <option>Custom Temperature</option>
+                                    </select>
+                                </div>
+                                <div class="form-group full-width">
+                                    <textarea placeholder="Product details and storage requirements..." rows="3"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn-quotation"><i class="fas fa-paper-plane"></i> Request Quote</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <section id="about" class="content-section">
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
             <div class="container">
-                 <div class="section-header">
-                    <h2>About Saipooja</h2>
-                </div>
-                <div class="about-us-grid">
-                    <div>
-                        <h3>India's Emerging Leader in Warehouse & Logistics.</h3>
-                        <p>Saipooja Warehouse & Logistics was founded with a singular mission: to provide secure, reliable, and technologically advanced storage and transportation solutions for businesses of all sizes. We are committed to simplifying your supply chain, enabling you to focus on what you do best.</p>
+                <div class="about-grid">
+                    <div class="about-content">
+                        <span class="section-subtitle">About Saipooja</span>
+                        <h2>India's Emerging Leader in Warehouse & Logistics</h2>
+                        <p class="about-lead">Saipooja Warehouse & Logistics was founded with a singular mission: to provide secure, reliable, and technologically advanced storage and transportation solutions for businesses of all sizes.</p>
+                        
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Advanced Technology</h4>
+                                    <p>AI-powered inventory management and tracking systems</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Pan-India Presence</h4>
+                                    <p>Warehouses across 50+ cities in India</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Expert Team</h4>
+                                    <p>Industry veterans with decades of experience</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <h4>Custom Solutions</h4>
+                                    <p>Tailored services to meet unique business needs</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-buttons">
+                            <a href="about.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i> Learn More</a>
+                            <a href="#contact" class="btn btn-outline"><i class="fas fa-phone"></i> Contact Us</a>
+                        </div>
                     </div>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=1992&auto=format&fit=crop" alt="Warehouse Interior">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=800&auto=format&fit=crop" alt="Warehouse Interior">
+                        <div class="about-image-badge">
+                            <i class="fas fa-award"></i>
+                            <span>ISO 9001:2015<br>Certified</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="content-section team-section">
-             <div class="container">
-                 <div class="section-header">
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Our Leadership</span>
                     <h2>Meet Our Leaders</h2>
+                    <p>The visionaries driving our mission to transform warehouse & logistics</p>
                 </div>
                 <div class="team-grid">
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="Founder">
-                        <h3>Sandeep Mayekar</h3>
-                        <p>Founder</p>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/300x300?text=Sandeep+Mayekar" alt="Founder">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Sandeep Mayekar</h3>
+                            <span class="team-role">Founder</span>
+                            <p>Visionary leader with 20+ years in supply chain management</p>
+                        </div>
                     </div>
-                    <div class="team-member">
-                        <img src="https://via.placeholder.com/150" alt="CEO">
-                        <h3>Saurabh Mishra</h3>
-                        <p>CEO</p>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/300x300?text=Saurabh+Mishra" alt="CEO">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Saurabh Mishra</h3>
+                            <span class="team-role">CEO</span>
+                            <p>Tech entrepreneur transforming logistics with innovation</p>
+                        </div>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://via.placeholder.com/300x300?text=Leadership+Team" alt="Team">
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Expert Team</h3>
+                            <span class="team-role">Operations</span>
+                            <p>Dedicated professionals ensuring excellence</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Partners Section - Auto Sliding -->
         <section class="partners-section">
             <div class="container">
-                <div class="section-header"><h2>Trusted By Leading Brands</h2></div>
-                <div class="swiper-container logo-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+1" alt="Brand 1"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+2" alt="Brand 2"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+3" alt="Brand 3"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+4" alt="Brand 4"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+5" alt="Brand 5"></div>
-                        <div class="swiper-slide"><img src="https://via.placeholder.com/150x50?text=Brand+6" alt="Brand 6"></div>
+                <div class="section-header">
+                    <span class="section-subtitle">Trusted By</span>
+                    <h2>Leading Brands Rely on Us</h2>
+                </div>
+                <div class="logo-slider-container">
+                    <div class="logo-slider-track">
+                        <!-- Brand 1 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Amazon_Logo.svg" alt="Amazon"></div>
+                        <!-- Brand 2 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Flipkart"></div>
+                        <!-- Brand 3 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+                        <!-- Brand 4 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"></div>
+                        <!-- Brand 5 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Auto_Logo.svg" alt="Microsoft"></div>
+                        <!-- Brand 6 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"></div>
+                        <!-- Brand 7 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Udaan_Logo.svg" alt="Udaan"></div>
+                        <!-- Brand 8 -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tata_logo.svg" alt="Tata"></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Amazon_Logo.svg" alt="Amazon"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Flipkart"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Auto_Logo.svg" alt="Microsoft"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Udaan_Logo.svg" alt="Udaan"></div>
+                        <div class="logo-slide"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Tata_logo.svg" alt="Tata"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Supply Chain?</h2>
+                    <p>Join 500+ businesses trusting Saipooja for their warehousing needs</p>
+                    <div class="cta-buttons">
+                        <a href="signup.html" class="btn btn-white btn-large"><i class="fas fa-user-plus"></i> Get Started</a>
+                        <a href="#contact" class="btn btn-outline-white btn-large"><i class="fas fa-phone"></i> Talk to Expert</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
+
+    <!-- Floating Action Buttons -->
     <div class="floating-actions">
-        <a href="https://wa.me/917900082808" target="_blank" class="fab-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" id="ask-ai" class="fab-icon ai"><i class="fas fa-brain"></i></a>
+        <a href="https://wa.me/917900082808" target="_blank" class="fab-icon whatsapp" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#" id="ask-ai" class="fab-icon ai" title="AI Assistant">
+            <i class="fas fa-robot"></i>
+        </a>
+        <a href="tel:+917900082808" class="fab-icon call" title="Call Us">
+            <i class="fas fa-phone"></i>
+        </a>
     </div>
 
+    <!-- Footer -->
     <footer id="contact" class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>About Us</h4>
-                    <p>Saipooja Warehouse offers secure and reliable storage solutions. Our mission is to provide top-notch service and peace of mind.</p>
+                <div class="footer-column about-column">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-warehouse"></i> Saipooja
+                    </a>
+                    <p>India's trusted partner for advanced warehouse and logistics solutions. We're committed to simplifying your supply chain with technology-driven services.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="policies.html">All Policies</a></li>
-                        <li><a href="terms.html">Terms & Conditions</a></li>
-                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#facilities"><i class="fas fa-chevron-right"></i> Facilities</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Warehouse Storage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cold Storage</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Logistics Services</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Inventory Management</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cross-Docking</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Warehouse St, Mumbai, India</li>
-                        <li><i class="fas fa-phone"></i> +91 79000 82808</li>
-                        <li><i class="fas fa-envelope"></i> info@saipoojawarehouse.com</li>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i> <span>123 Warehouse St, Mumbai, India</span></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+917900082808">+91 79000 82808</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@saipoojawarehouse.com">info@saipoojawarehouse.com</a></li>
+                        <li><i class="fas fa-clock"></i> <span>Mon - Sat: 9:00 AM - 7:00 PM</span></li>
                     </ul>
-                </div>
-                 <div class="footer-column">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Saipooja Warehouse. All rights reserved.</p>
-                 <p class="developer-credit">Developed by <a href="#" target="_blank">Saurabh Mishra</a></p>
+                <p>&copy; 2024 Saipooja Warehouse & Logistics. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="policies.html">Policies</a>
+                </div>
+                <p class="developer-credit">Developed with <i class="fas fa-heart"></i> by <a href="#" target="_blank">Saurabh Mishra</a></p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-=======
-            <h1>Welcome to Saipooja Warehouse</h1>
-            <p>Your trusted partner in storage and logistics.</p>
-            <a href="login.html" class="button">Get Started</a>
-        </section>
-        
-        <section id="about">
-            <h2>About Us</h2>
-            <p>We provide state-of-the-art warehousing solutions...</p>
-        </section>
-
-        <section id="services">
-            <h2>Our Services</h2>
-            <p>Explore our range of services...</p>
-        </section>
-
-        <section id="cold-storage">
-            <h2>Cold Storage</h2>
-            <p>24/7 available cold storage...</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Get in touch with our team...</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Saipooja Warehouse. All rights reserved.</p>
-    </footer>
-    <script src="main.js"></script>
-</body>
-</html>
->>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9

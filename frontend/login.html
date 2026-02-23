@@ -3,40 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Client Login - Saipooja Warehouse</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Login - Saipooja Warehouse & Logistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo">Saipooja Warehouse</div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/#services">Services</a></li>
-                <li><a href="/#locations">Locations</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="login-container">
-        <div class="login-box">
-            <h2>Client Login</h2>
-            <form id="login-form">
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn">Login</button>
-                <p id="login-error" class="error-message"></p>
-            </form>
+    <div class="login-page">
+        <div class="login-background">
+            <div class="bg-shape shape-1"></div>
+            <div class="bg-shape shape-2"></div>
+            <div class="bg-shape shape-3"></div>
         </div>
-    </main>
+        
+        <div class="login-container">
+            <div class="login-header">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-warehouse"></i> Saipooja
+                </a>
+                <p>Warehouse & Logistics Solutions</p>
+            </div>
+            
+            <div class="form-box">
+                <div class="button-box">
+                    <div id="btn"></div>
+                    <button type="button" class="toggle-btn" onclick="showLogin()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="showRegister()">Register</button>
+                </div>
+                
+                <form id="login" class="input-group">
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" class="input-field" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" class="input-field" placeholder="Enter Password" required>
+                    </div>
+                    <div class="form-options">
+                        <input type="checkbox" class="check-box" id="remember">
+                        <label for="remember">Remember Password</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-sign-in-alt"></i> Log In
+                    </button>
+                    <a href="#" class="forgot-password" onclick="showForgotPassword()">
+                        <i class="fas fa-key"></i> Forgot Password?
+                    </a>
+                </form>
+                
+                <form id="register" class="input-group">
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="input-field" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="input-field" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" class="input-field" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" class="input-field" placeholder="Enter Password" required>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-building"></i>
+                        <input type="text" class="input-field" placeholder="Company Name (Optional)">
+                    </div>
+                    <div class="form-options">
+                        <input type="checkbox" class="check-box" id="terms" required>
+                        <label for="terms">I agree to the <a href="terms.html">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+                </form>
+                
+                <form id="forgot-password" class="input-group">
+                    <div class="forgot-header">
+                        <i class="fas fa-key"></i>
+                        <h3>Reset Password</h3>
+                        <p>Enter your email address and we'll send you a link to reset your password.</p>
+                    </div>
+                    <div class="input-field-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="input-field" placeholder="Enter your Email" required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Reset Link
+                    </button>
+                    <a href="#" onclick="showLogin()" class="back-link">
+                        <i class="fas fa-arrow-left"></i> Back to Login
+                    </a>
+                </form>
+            </div>
+            
+            <div class="login-footer">
+                <p>&copy; 2024 Saipooja Warehouse. All rights reserved.</p>
+            </div>
+        </div>
+        
+        <div class="login-info">
+            <div class="info-content">
+                <h1>Welcome to Saipooja</h1>
+                <p>Access your comprehensive warehouse management dashboard. Track inventory, manage shipments, and grow your business.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item">
+                        <i class="fas fa-boxes"></i>
+                        <div>
+                            <h4>Inventory Management</h4>
+                            <p>Real-time tracking and management</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h4>Logistics Tracking</h4>
+                            <p>GPS-enabled shipment monitoring</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-snowflake"></i>
+                        <div>
+                            <h4>Cold Storage</h4>
+                            <p>Temperature-controlled solutions</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <div>
+                            <h4>Analytics</h4>
+                            <p>AI-powered business insights</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <a href="tel:+917900082808"><i class="fas fa-phone"></i> +91 79000 82808</a>
+                    <a href="https://wa.me/917900082808" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
@@ -46,12 +160,13 @@
     <script>
       // Your web app's Firebase configuration
       const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_STORAGE_BUCKET",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID"
+        apiKey: "AIzaSyBog_WAXWe9Wqaklm9RJ2N5gbkqACT-boo",
+        authDomain: "saipooja-warehouse.firebaseapp.com",
+        projectId: "saipooja-warehouse",
+        storageBucket: "saipooja-warehouse.firebasestorage.app",
+        messagingSenderId: "652240211191",
+        appId: "1:652240211191:web:2a78cbfb6d2e085c5b17f2",
+        measurementId: "G-H11P35HT1P"
       };
 
       // Initialize Firebase
@@ -60,42 +175,6 @@
       const db = firebase.firestore();
     </script>
 
-=======
-    <title>Login - Saipooja Warehouse</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-    <div class="login-container">
-        <div class="login-header">
-            <a href="index.html">Back to Home</a>
-        </div>
-        <div class="form-box">
-            <div class="button-box">
-                <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="showLogin()">Log In</button>
-                <button type="button" class="toggle-btn" onclick="showRegister()">Register</button>
-            </div>
-            <form id="login" class="input-group">
-                <input type="text" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box"><span>Remember Password</span>
-                <button type="submit" class="submit-btn">Log in</button>
-                <a href="#" class="forgot-password" onclick="showForgotPassword()">Forgot Password?</a>
-            </form>
-            <form id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="Full Name" required>
-                <input type="email" class="input-field" placeholder="Email" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
-                <input type="checkbox" class="check-box" required><span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Register</button>
-            </form>
-            <form id="forgot-password" class="input-group" style="display: none;">
-                <input type="email" class="input-field" placeholder="Enter your Email" required>
-                <button type="submit" class="submit-btn">Reset Password</button>
-            </form>
-        </div>
-    </div>
->>>>>>> 0f64b3d6604b52888d25a84ec74eb94ad7f7cff9
     <script src="login.js"></script>
 </body>
 </html>

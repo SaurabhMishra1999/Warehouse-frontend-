@@ -8,14 +8,22 @@
     <link rel="stylesheet" href="inventory.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Saipooja Warehouse</div>
-        <nav>
-            <ul>
-                <li><a href="superadmin.html">Dashboard</a></li>
-                <li><a href="login.html">Logout</a></li>
-            </ul>
-        </nav>
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-warehouse"></i> Saipooja
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="superadmin.html">Dashboard</a></li>
+                    <li><a href="warehouse.html">Warehouses</a></li>
+                    <li><a href="inventory.html" class="active">Inventory</a></li>
+                    <li><a href="coldstorage.html">Cold Storage</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main class="container">
